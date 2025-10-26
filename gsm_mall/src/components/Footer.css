@@ -1,0 +1,64 @@
+/* ──────────────────────────────────────
+   MallBoost Footer – Plain CSS
+   ────────────────────────────────────── */
+.mall-footer {
+  background: #111;
+  color: #ccc;
+  padding: 3rem 0 1rem;
+  margin-top: auto;               /* pushes footer to bottom when using flex on body */
+}
+.mall-footer a { color: #ffd700; text-decoration: none; }
+.mall-footer a:hover { text-decoration: underline; }
+
+.mall-footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+.footer-col h3,
+.footer-col h4 {
+  color: #fff;
+  margin-bottom: .8rem;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-col li {
+  margin-bottom: .5rem;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: .8rem;
+}
+.social-icons a {
+  font-size: 1.5rem;
+  transition: transform .2s;
+}
+.social-icons a:hover { transform: translateY(-3px); }
+
+/* Bottom bar */
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #333;
+  font-size: .9rem;
+}
+
+/* ────── RESPONSIVE ────── */
+@media (max-width: 576px) {
+  .mall-footer-container{ 
+    gap: 1.5rem;
+    text-align: center;
+    }
+    .social-icons{
+        align-items: center;
+        justify-content: center ;
+    }
+}

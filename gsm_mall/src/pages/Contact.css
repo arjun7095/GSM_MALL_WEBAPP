@@ -1,0 +1,243 @@
+/* src/pages/Contact.css – Hero Layout (Address left | Map right) */
+
+/* ──────────────────────────────────────
+   Root & Animations
+   ────────────────────────────────────── */
+:root {
+  --primary: #1a2a6c;
+  --accent: #b21f1f;
+  --gold: #ffd700;
+  --gold-hover: #e6c200;
+  --shadow: 0 15px 35px rgba(0,0,0,.1);
+  --transition: all .4s cubic-bezier(.4,0,.2,1);
+}
+
+/* ──────────────────────────────────────
+   Hero Container
+   ────────────────────────────────────── */
+.contact-hero {
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #f8f9fa;
+  background-image: url('https://wallpapers.com/images/hd/fancy-shopping-mall-dfuvkwdelmipt093.jpg');
+}
+
+/* LEFT – ADDRESS CARD */
+.contact-hero__left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: fadeInLeft 1s ease-out;
+  backdrop-filter: blur(2px);
+  
+}
+.contact-card {
+  background:rgba(255, 255, 255, 0.659);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 3rem;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+/* Title & Underline */
+.contact-title {
+  font-size: 3.8rem;
+  font-weight: 800;
+  margin: 0 0 .5rem;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+.contact-underline {
+  width: 70px;
+  height: 4px;
+  background: var(--accent);
+  margin: 1.5rem 0;
+  transform: scaleX(0);
+  animation: lineGrow .9s ease-out .5s forwards;
+}
+.contact-item {
+  font-size: 1.2rem;
+  margin: .8rem 0;
+  line-height: 1.6;
+  color: black;
+}
+.contact-item a {
+  color: var(--primary);
+  text-decoration: none;
+}
+.contact-item a:hover { text-decoration: underline; }
+
+/* Edit Button */
+.edit-btn {
+  margin-top: 2rem;
+  padding: .8rem 2rem;
+  background: var(--gold);
+  color: #111;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(255,215,0,.3);
+}
+.edit-btn:hover {
+  background: var(--gold-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255,215,0,.4);
+}
+
+/* RIGHT – MAP */
+.contact-hero__right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: fadeInRight 1s ease-out;
+  backdrop-filter: blur(2px);
+}
+.map-container {
+  width: 100%;
+  max-width: 600px;
+  height: 500px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ──────────────────────────────────────
+   EDIT PANEL (inline)
+   ────────────────────────────────────── */
+.edit-panel {
+  animation: slideDown .5s ease-out;
+}
+.edit-panel label {
+  display: block;
+  margin-top: 1.2rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+.edit-panel input,
+.edit-panel textarea {
+  width: 100%;
+  padding: .9rem;
+  margin-top: .4rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255,255,255,.9);
+}
+.edit-panel textarea { resize: vertical; }
+.map-edit textarea { min-height: 150px; }
+
+.edit-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.edit-actions button {
+  flex: 1;
+  padding: .75rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.save-btn   { background: var(--primary); color: #fff; }
+.cancel-btn { background: #6c757d; color: #fff; }
+
+/* ──────────────────────────────────────
+   AUTH MODAL
+   ────────────────────────────────────── */
+.auth-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn .3s ease-out;
+}
+.auth-modal {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  animation: modalPop .4s ease-out;
+}
+.auth-modal h2 { margin-bottom: 1.5rem; color: var(--primary); }
+.auth-modal input {
+  width: 100%;
+  padding: .9rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+.auth-error { color: #e63946; margin: .5rem 0; }
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: .5rem;
+}
+.auth-buttons button {
+  flex: 1;
+  padding: .75rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.auth-buttons button[type="submit"] { background: var(--gold); color: #111; }
+.auth-buttons button[type="button"]  { background: #6c757d; color: #fff; }
+
+/* ──────────────────────────────────────
+   ANIMATIONS
+   ────────────────────────────────────── */
+@keyframes fadeInLeft {
+  from { opacity:0; transform:translateX(-50px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+@keyframes fadeInRight {
+  from { opacity:0; transform:translateX(50px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+@keyframes lineGrow { to { transform:scaleX(1); } }
+@keyframes slideDown {
+  from { opacity:0; transform:translateY(-30px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+@keyframes modalPop {
+  from { opacity:0; transform:scale(.8); }
+  to   { opacity:1; transform:scale(1); }
+}
+
+/* ──────────────────────────────────────
+   RESPONSIVE
+   ────────────────────────────────────── */
+@media (max-width: 992px) {
+  .contact-hero { flex-direction: column; }
+  .contact-hero__left,
+  .contact-hero__right { padding: 2rem 1rem; }
+  .contact-card { max-width: 100%; }
+  .map-container { height: 400px; }
+}
+@media (max-width: 576px) {
+  .contact-title { font-size: 2.8rem; }
+  .edit-actions { flex-direction: column; }
+}

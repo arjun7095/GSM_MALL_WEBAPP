@@ -1,0 +1,130 @@
+/* ──────────────────────────────────────
+   MallBoost Navbar – Plain CSS
+   ────────────────────────────────────── */
+.mall-navbar {
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1100;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+
+.mall-navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+/* LOGO */
+.mall-logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+}
+.logo-icon {
+  margin-right: .5rem;
+  font-size: 1.8rem;
+}
+
+/* LINKS */
+.mall-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.mall-links li {
+  margin-left: 1.8rem;
+}
+.mall-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  transition: color .3s;
+}
+.mall-links a:hover { color: #ffd700; }
+.mall-links a svg { margin-right: .4rem; }
+
+/* Role split visual separator */
+.role-split {
+  position: relative;
+}
+.role-split::before {
+  content: "";
+  position: absolute;
+  left: -0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1.2rem;
+  width: 1px;
+  background: rgba(255,255,255,.4);
+}
+
+/* HAMBURGER */
+.mall-hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.mall-hamburger span {
+  width: 26px;
+  height: 3px;
+  background: #fff;
+  margin: 4px 0;
+  transition: .4s;
+}
+.mall-hamburger span.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+.mall-hamburger span.open:nth-child(2) {
+  opacity: 0;
+}
+.mall-hamburger span.open:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -8px);
+}
+
+/* ────── RESPONSIVE ────── */
+@media (max-width: 992px) {
+  .mall-links { margin-left: 1rem; }
+  .mall-links li { margin-left: 1rem; }
+}
+@media (max-width: 768px) {
+  .mall-hamburger { display: flex; }
+
+  .mall-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width:100%;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    transform: translateY(-120%);
+    transition: transform .35s ease;
+  }
+  .mall-links.active {
+    transform: translateY(0);
+  }
+  .mall-links li {
+    margin: .8rem 0;
+    width: 100%;
+    text-align: center;
+    margin-left: 90%;
+  }
+  .role-split::before { display: none; }
+}
