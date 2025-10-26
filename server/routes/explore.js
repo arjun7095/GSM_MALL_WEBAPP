@@ -29,6 +29,7 @@ router.get('/stores', async (req, res) => {
 //   res.json(doc);
 // });
 
+
 // PUT /api/explore
 router.put('/', async (req, res) => {
   const { username, password, categories, stores } = req.body;
