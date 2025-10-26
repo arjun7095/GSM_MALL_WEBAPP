@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Services from './pages/Services';
+import Explore from './pages/Explore';
 // Other pages...
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
             <Route path="/admin/contact" element={<Contact />} />
             <Route path="/services" element={<Services />} />
             <Route path="/admin/services" element={<Services />} />
+            <Route path="/explore" element={<Explore />} />
+            <Route path="/admin/explore" element={<Explore />} />
             {/* Add more routes */}
           </Routes>
         </main>

@@ -1,0 +1,322 @@
+/* src/pages/Explore.css – Category Cards + Store Detail */
+
+:root {
+  --primary: #1a2a6c;
+  --accent: #b21f1f;
+  --gold: #ffd700;
+  --text: #f9f5f5;
+  --bg-glass: rgba(255, 255, 255, 0.15);
+  --shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.explore-hero {
+  min-height: 100vh;
+  background: rgba(255, 255, 255, 0.456) url('https://wallpapers.com/images/hd/fancy-shopping-mall-dfuvkwdelmipt093.jpg') center/cover no-repeat fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: var(--text);
+}
+/* Edit Panel Styles */
+.edit-panel {
+  animation: slideDown 0.5s ease-out;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.edit-title {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.edit-section {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+}
+
+.edit-section h3 {
+  color: var(--gold);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.edit-item,
+.store-header,
+.media-item-edit,
+.offer-item-edit {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+  align-items: center;
+}
+
+.edit-item input,
+.store-header input,
+.store-header select,
+.media-item-edit input,
+.offer-item-edit input,
+.offer-item-edit textarea {
+  flex: 1;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+}
+
+.edit-store {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 1.5rem;
+  border-radius: 14px;
+  margin-bottom: 1.5rem;
+}
+
+.media-list,
+.offers-list {
+  margin-top: 1rem;
+}
+
+.media-list h4,
+.offers-list h4 {
+  color: #fff;
+  margin: 0.8rem 0;
+  font-size: 1.1rem;
+}
+
+.add-btn,
+.delete-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.add-btn {
+  background: var(--gold);
+  color: #111;
+}
+
+.add-btn.small {
+  font-size: 0.8rem;
+  padding: 0.4rem 0.8rem;
+}
+
+.delete-btn {
+  background: #e63946;
+  color: white;
+}
+
+.delete-btn.small {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+}
+.file-upload,
+.media-item-edit {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+}
+
+.file-upload label,
+.media-item-edit select {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.file-upload input[type="file"],
+.media-item-edit input[type="file"] {
+  width: 100%;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 8px;
+}
+
+.preview-img,
+.preview-media {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.preview-media {
+  height: 120px;
+  object-fit: cover;
+}
+.content-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(14px);
+  border-radius: 24px;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+/* Title */
+.explore-title {
+  font-size: 4.2rem;
+  font-weight: 800;
+  margin: 0 0 0.8rem;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #fff, #ffd700);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.explore-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+}
+
+/* Category Grid */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.category-card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 2rem 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.category-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--gold);
+}
+
+.category-card h3 {
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+/* Store Grid */
+.back-btn, .stores-title {
+  text-align: left;
+  margin: 1rem 0;
+}
+
+.back-btn {
+  background: none;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.store-card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.store-card:hover {
+  transform: translateY(-8px);
+}
+
+.store-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.store-card h3 {
+  color: #fff;
+  margin: 0.5rem 0;
+}
+
+.store-card p {
+  color: #eee;
+}
+
+/* Store Detail */
+.store-detail {
+  text-align: left;
+}
+
+.store-detail h2 {
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.media-item img, .media-item video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.offers h3 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.offer-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.offer-card h4 {
+  color: var(--gold);
+}
+
+/* Edit & Auth (same as before) */
+.edit-btn { /* same as previous */ }
+.edit-panel { /* same */ }
+.auth-backdrop { /* same */ }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .explore-title { font-size: 3rem; }
+  .category-grid, .store-grid { grid-template-columns: 1fr; }
+}
