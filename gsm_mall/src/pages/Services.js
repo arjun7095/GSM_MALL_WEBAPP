@@ -38,7 +38,7 @@ const Services = () => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get("http://192.168.1.31:5000/api/pages/services");
+      const res = await axios.get("http://192.168.0.105:5000/api/pages/services");
       if (res.data) {
         setData(res.data);
         setTemp(res.data);
@@ -57,7 +57,7 @@ const Services = () => {
   const handleAuth = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://192.168.1.31:5000/api/pages/auth", auth);
+      const res = await axios.post("http://192.168.0.105:5000/api/pages/auth", auth);
       if (res.data.success) {
         setShowAuth(false);
         setIsAuthenticated(true);
@@ -77,7 +77,7 @@ const Services = () => {
       return;
     }
     try {
-      const res = await axios.put("http://192.168.1.31:5000/api/pages/services", {
+      const res = await axios.put("http://192.168.0.105:5000/api/pages/services", {
         username: auth.username,
         password: auth.password,
         ...temp,

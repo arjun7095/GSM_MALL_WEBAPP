@@ -7,6 +7,8 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Services from './pages/Services';
 import Explore from './pages/Explore';
+import Events from './pages/Events';
+import Feedback from './pages/Feedback';
 // Other pages...
 
 function App() {
@@ -25,6 +27,9 @@ function App() {
             <Route path="/admin/services" element={<Services />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/admin/explore" element={<Explore />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/admin/events" element={<Events />} />
+            <Route path="/events/feedback/:id" element={<Feedback />} />
             {/* Add more routes */}
           </Routes>
         </main>

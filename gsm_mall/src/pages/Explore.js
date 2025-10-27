@@ -47,8 +47,8 @@ const Explore = () => {
   const fetchData = async () => {
     try {
       const [catRes, storeRes] = await Promise.all([
-        axios.get('http://192.168.1.31:5000/api/explore/categories'),
-        axios.get('http://192.168.1.31:5000/api/explore/stores')
+        axios.get('http://192.168.0.105:5000/api/explore/categories'),
+        axios.get('http://192.168.0.105:5000/api/explore/stores')
       ]);
       const cats = catRes.data || [];
       const strs = storeRes.data || [];
@@ -82,7 +82,7 @@ const Explore = () => {
   const handleAuth = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://192.168.1.31:5000/api/pages/auth', auth);
+      const res = await axios.post('http://192.168.0.105:5000/api/pages/auth', auth);
       if (res.data.success) {
         setShowAuth(false);
         setIsEditing(true);
@@ -99,7 +99,7 @@ const Explore = () => {
   const save = async () => {
     setIsSaving(true);
     try {
-      await axios.put('http://192.168.1.31:5000/api/explore', {
+      await axios.put('http://192.168.0.105:5000/api/explore', {
         username: auth.username,
         password: auth.password,
         categories: tempData.categories,
@@ -132,7 +132,7 @@ if (isEditing) {
     formData.append('file', file);
 
     try {
-      const res = await axios.post('http://192.168.1.31:5000/api/upload', formData, {
+      const res = await axios.post('http://192.168.0.105:5000/api/upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
 

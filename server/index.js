@@ -22,6 +22,7 @@ mongoose.connect('mongodb://localhost:27017/gsm-mall', {
 app.use('/api/pages', pagesRouter);
 app.use('/api/explore', require('./routes/explore'));
 app.use('/api/upload', require('./routes/upload'));
+app.use('/api/events', require('./routes/events'));
 
 // Health Check
 app.get('/', (req, res) => {

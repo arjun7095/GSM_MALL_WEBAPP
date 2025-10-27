@@ -29,7 +29,7 @@ const About = () => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get('http://192.168.1.31:5000/api/pages/about');
+      const res = await axios.get('http://192.168.0.105:5000/api/pages/about');
       setData(res.data);
       setTempContent(res.data.content || '');
     } catch (err) {
@@ -47,7 +47,7 @@ const About = () => {
   const handleAuthSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://192.168.1.31:5000/api/pages/auth', { username, password });
+      const res = await axios.post('http://192.168.0.105:5000/api/pages/auth', { username, password });
       if (res.data.success) {
         setShowAuthModal(false);
         setIsAuthenticated(true);
@@ -70,7 +70,7 @@ const About = () => {
     }
 
     try {
-      const res = await axios.put('http://192.168.1.31:5000/api/pages/about', {
+      const res = await axios.put('http://192.168.0.105:5000/api/pages/about', {
         username,
         password,
         content: tempContent

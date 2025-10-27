@@ -31,7 +31,7 @@ const Contact = () => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get("http://192.168.1.31:5000/api/pages/contact");
+      const res = await axios.get("http://192.168.0.105:5000/api/pages/contact");
       setData(res.data);
       setTemp(res.data);
     } catch (e) {
@@ -50,7 +50,7 @@ const Contact = () => {
   const handleAuth = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://192.168.1.31:5000/api/pages/auth", auth);
+      const res = await axios.post("http://192.168.0.105:5000/api/pages/auth", auth);
       if (res.data.success) {
         setShowAuth(false);
         setIsAuthenticated(true);
@@ -72,7 +72,7 @@ const Contact = () => {
       return;
     }
     try {
-      const res = await axios.put("http://192.168.1.31:5000/api/pages/contact", {
+      const res = await axios.put("http://192.168.0.105:5000/api/pages/contact", {
         username: auth.username,
         password: auth.password,
         ...temp,
