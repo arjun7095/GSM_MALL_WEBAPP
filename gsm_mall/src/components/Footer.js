@@ -39,10 +39,10 @@ const Footer = () => {
         <div className="footer-col">
           <h4>Follow Us</h4>
           <div className="social-icons">
-            <a href="#" aria-label="Facebook"><FaFacebook /></a>
-            <a href="#" aria-label="Twitter"><FaTwitter /></a>
-            <a href="#" aria-label="Instagram"><FaInstagram /></a>
-            <a href="#" aria-label="LinkedIn"><FaLinkedin /></a>
+            <a href="https://www.facebook.com" aria-label="Facebook"><FaFacebook /></a>
+            <a href="https://x.com/" aria-label="Twitter"><FaTwitter /></a>
+            <a href="https://www.instagram.com/" aria-label="Instagram"><FaInstagram /></a>
+            <a href="https://in.linkedin.com/" aria-label="LinkedIn"><FaLinkedin /></a>
           </div>
         </div>
       </div>
